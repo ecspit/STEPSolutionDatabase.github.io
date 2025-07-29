@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STEP Answer Database</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h1>STEP Solution Database</h1>
+  <div>
+    <p>
+      The STEP is the mathematics entrance exam used by the Univeristy of Caimbridge and some other univeristies as a part of their mathematics or maths-related courses' entry requirements. On this website you will find written solutions and discussions to various questions. Each document includes hints, a complete written solution and a discussion about the question
+    </p>
+    <p>
+      This website is by no means afiliated with the Univeristy of Caimbridge, OCR or the official STEP <a href="https://stepdatabase.maths.org/">database</a>.
+    </p>
+  </div>
+
+  <input type="text" id="search-input" placeholder="Search by year, paper, question, topics..." />
+
+  <table id="step-table">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Paper</th>
+        <th>Question</th>
+        <th>Topic(s)</th>
+        <th>Answer PDF</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- JavaScript will inject rows here -->
+    </tbody>
+  </table>
+
+  <script>
+    // 🔧 STEP data – add more entries or fetch dynamically
+    const stepData = [
+      {
+        year: "2008",
+        paper: "STEP III",
+        question: "Q5",
+        topic: "Chebyshev's polynomial",
+        pdfUrl: "solutions/08-S3-Q5.pdf"
+      },
+      {
+        year: "2008",
+        paper: "STEP III",
+        question: "Q6",
+        topic: "Differential equation",
+        pdfUrl: "solutions/08-S3-Q6.pdf"
+      },
+      {
+        year: "2009",
+        paper: "STEP II",
+        question: "Q3",
+        topic: "Trigonometry",
+        pdfUrl: "solutions/09-S2-Q3.pdf"
+      },
+      {
+        year: "1989",
+        paper: "STEP I",
+        question: "Q6",
+        topic: "Coordinate geometry",
+        pdfUrl: "solutions/89-S1-Q6.pdf"
+      },
+      {
+        year: "1990",
+        paper: "STEP I",
+        question: "Q9",
+        topic: "Coordinate geometry",
+        pdfUrl: "solutions/90-S1-Q9.pdf"
+      },
+    ];
+
+    const tableBody = document.getElementById("table-body");
+    const searchInput = document.getElementById("search-input");
+
+    // 🔁 Render rows
+    function renderTable(data) {
+      tableBody.innerHTML = "";
+      data.forEach(entry => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${entry.year}</td>
+          <td>${entry.paper}</td>
+          <td>${entry.question}</td>
+          <td>${entry.topic}</td>
+          <td><a href="${entry.pdfUrl}" target="_blank">View PDF</a></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // 🔍 Filter rows on search input
+    function handleSearch() {
+      const query = searchInput.value.toLowerCase();
+      const filtered = stepData.filter(entry =>
+        Object.values(entry).some(val =>
+          val.toLowerCase().includes(query)
+        )
+      );
+      renderTable(filtered);
+    }
+
+    // Initial render
+    renderTable(stepData);
+
+    // Listen for input changes
+    searchInput.addEventListener("input", handleSearch);
+  </script>
+
+</body>
+</html>
