@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}   
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+
+\title{08-S3-Q5 \\ Solution + Discussion}
+\author{David Puerta}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent In this document we will go through the solution to the 08-S3-Q5 question and provide a discussion of the question at the end. There are also hints on the first page to aid you in finding a solution. There is no single method that results in an answer to a STEP question, there are a multitude of different paths that end up at the same solution. However, some methods are more straight forward and you are encouraged to take the path of least resistance.  
+\end{abstract}
+
+\vspace{2cm}
+
+\begin{center}
+    \textbf{Hints}
+\end{center}
+
+\textbf{1st part}: In the induction step substitute $\mathrm{T}_{k+2}(x)$ and $\mathrm{T}_{k}(x)$ out using the recurrence relation, expanding and simplifying.
+
+\vspace{1cm}
+
+\textbf{2nd part}: Use $\left(\mathrm{T}_n(x)\right)^2 - \mathrm{T}_{n-1}(x) \mathrm{T}_{n+1}(x) = 0$ to find $\mathrm{T}_2,\mathrm{T}_3,\mathrm{T}_4$ in terms of $\mathrm{r}(x)$ and $\mathrm{T}_0$ then use induction.
+
+\vspace{1cm}
+
+\textbf{3rd part}: Consider writing $\mathrm{T}_{2}(x) -2x \mathrm{T}_{1}(x) + \mathrm{T}_{0}(x) =0$ and $\left(\mathrm{T}_1(x)\right)^2 - \mathrm{T}_{0}(x) \mathrm{T}_{2}(x)=0$
+in terms of $\mathrm{T}_0$ and $\mathrm{r}(x)$.
+
+\newpage
+
+\begin{center}
+    \textbf{Solution}
+\end{center}
+
+\vspace{0.5cm}
+
+Our base case is for $n=1$,
+\[
+\mathrm{T}_1^2(x)-\mathrm{T}_0(x)\mathrm{T}_2(x) = \mathrm{f}(x)
+\]
+which is clearly true.\par
+
+\quad Our induction hypothesis is that 
+\[
+\mathrm{T}_k^2(x)-\mathrm{T}_{k-1}(x)\mathrm{T}_{k+1}(x) = \mathrm{f}(x)
+\]
+is true for some $n=k$.\par
+
+\quad Considering the $n=k+1$ case,
+\begin{align*}
+& \mathrm{T}^2_{k+1}(x) - \mathrm{T}_{k}(x) \mathrm{T}_{k+2}(x) \\
+& = \mathrm{T}^2_{k+1}(x) - \Bigg[\frac{1}{2x}\mathrm{T}_{k+1}(x) + \frac{1}{2x}\mathrm{T}_{k-1}(x)\Bigg]\Bigg[2x\mathrm{T}_{k+1}(x) - \mathrm{T}_{k}(x)\Bigg] \\
+& = \mathrm{T}^2_{k+1}(x) - \Bigg[\mathrm{T}^2_{k+1}(x) - \frac{1}{2x}\mathrm{T}_{k+1}(x)\mathrm{T}_{k}(x) + \mathrm{T}_{k+1}(x)\mathrm{T}_{k-1}(x)- \frac{1}{2x}\mathrm{T}_{k}(x)\mathrm{T}_{k-1}(x)  \Bigg]\\
+& = \frac{\mathrm{T}_{k}(x)}{2x}\Bigg[\mathrm{T}_{k+1}(x)+\mathrm{T}_{k-1}(x)\Bigg] - \mathrm{T}_{k+1}(x)\mathrm{T}_{k-1}(x) \\
+& = \mathrm{T}^2_k(x) - \mathrm{T}_{k-1}(x) \mathrm{T}_{k+1}(x) = \mathrm{f}(x)
+\end{align*}
+by the induction hypothesis, hence true for $n=k+1$.\par 
+
+\quad As true for $n=1$, $n=k+1$ and we assumed true for $n=k$ then true for all $n \geq 1$ by induction.\par
+
+\vspace{0.5cm}
+
+Using the fact that $\mathrm{f}(x)\equiv 0$, 
+\[
+\mathrm{f}(x) = \mathrm{T}^2_n(x) - \mathrm{T}_{n-1}(x) \mathrm{T}_{n+1}(x)
+\]
+we can find the terms $\mathrm{T}_2(x),\mathrm{T}_3(x),\mathrm{T}_4(x)$ in terms of $\mathrm{T}_0(x)$ and $\mathrm{r}(x)$:
+\begin{align*}
+& \mathrm{T}_{2}(x) = \frac{(\mathrm{T}_{1}(x))^2}{\mathrm{T}_{0}(x)} = \mathrm{T}_{0}(x)\mathrm{r}^2(x) \\
+& \mathrm{T}_{3}(x) = \frac{(\mathrm{T}_{2}(x))^2}{\mathrm{T}_{1}(x)} = \mathrm{T}_{0}(x)\mathrm{r}^3(x) \\
+& \mathrm{T}_{4}(x) = \frac{(\mathrm{T}_{3}(x))^2}{\mathrm{T}_{2}(x)} = \mathrm{T}_{0}(x)\mathrm{r}^4(x)
+\end{align*}
+and we can conjecture that for $n \geq 1$,
+\[
+\mathrm{T}_{n}(x) = \mathrm{T}_{0}(x)\mathrm{r}^n(x).
+\]
+
+
+We will prove this by strong induction. Our base case $n=1$,
+\[
+\mathrm{T}_{(1)}(x) = \mathrm{T}_{0}(x)\mathrm{r}(x)
+\]
+is clearly true.\par
+
+\quad Our induction hypothesis is that 
+\[
+\mathrm{T}_{k}(x) = \mathrm{T}_{0}(x)\mathrm{r}^k(x) \quad \text{and} \quad \mathrm{T}_{k-1}(x) = \mathrm{T}_{0}(x)\mathrm{r}^{k-1}(x)
+\]
+is true for some $n=k$ and $n=k-1$ respectively.\par
+
+\quad Considering the $n=k+1$ case,
+\[
+\mathrm{T}_{k+1}(x) = \frac{\mathrm{T}^2_{k}(x)}{\mathrm{T}_{k-1}(x)} = \frac{(\mathrm{T}_{0}(x)\mathrm{r}^k(x))^2}{ \mathrm{T}_{0}(x)\mathrm{r}^{k-1}(x)} = \mathrm{T}_{0}(x)\mathrm{r}^{k+1}(x)
+\]
+by the induction hypothesis, hence true for $n=k+1$.\par 
+
+\quad As true for $n=1$, $n=k+1$ and assumed true for $n=k$ and $n=k-1$ then true for all $n \geq 1$ by induction.
+
+\vspace{0.5cm}
+
+To find the possible values of $\mathrm{r}(x)$ we will look at the pair of equations
+\[
+\mathrm{T}_{2}(x) -2x \mathrm{T}_{1}(x) + \mathrm{T}_{0}(x) =0 \quad \text{and} \quad \left(\mathrm{T}_1(x)\right)^2 - \mathrm{T}_{0}(x) \mathrm{T}_{2}(x) = 0
+\]
+which arrive from the recurrence relation and the fact that $\mathrm{f}(x) \equiv 0$. Rearranging the first equation to get 
+\[
+\mathrm{T}_{2}(x) = 2x \mathrm{T}_{1}(x) - \mathrm{T}_{0}(x)
+\]
+and substituting into the second equation we arrive at
+\[
+\mathrm{T}^2_1(x) - \mathrm{T}_{0}(x)\Big[2x \mathrm{T}_{1}(x) - \mathrm{T}_{0}(x)\Big] = \mathrm{T}^2_1(x) - 2x\mathrm{T}_{0}(x)\mathrm{T}_{1}(x) + \mathrm{T}_{0}^2(x) = 0.
+\]
+Using $\mathrm{r}(x) = \mathrm{T}_{1}(x)/ \mathrm{T}_{0}(x)$ we can write the equation above as
+\[
+\mathrm{r}^2(x) - 2x\mathrm{r}(x)+1 =0,
+\]
+solving the quadratic in $\mathrm{r}(x)$ we find that
+\[
+\mathrm{r}(x) = x \pm \sqrt{x^2-1}.
+\]
+
+\newpage
+\begin{center}
+    \textbf{Discussion}
+\end{center}
+
+\vspace{0.5cm}
+
+The hardest part of this question is the great possibility of cluttered working, mislabelling and general ambiguity. Success in this question relies on a clear line of working with the end goal constantly in mind. Comprising of two proofs and lots of manipulation, the goal (either the end result of the induction step or a solution of $\mathrm{r}(x)$ in terms of $x$) should always be in the back of your head when you are answering the question; this is particularly true for the induction step in the first part of the question.\par
+
+\quad To get the desired result in a proof by induction it is often a good idea to remember the maxim: ``What do I have and what do I need?". The $n=k+1$ step leads to the ``What do I have" portion being
+\begin{equation*}
+\left(\mathrm{T}_{k+1}(x)\right)^2 - \mathrm{T}_{k}(x) \mathrm{T}_{k+2}(x)
+\end{equation*}
+and the ``What do I need" portion being
+\begin{equation*}
+\left(\mathrm{T}_{k}(x)\right)^2 - \mathrm{T}_{k-1}(x) \mathrm{T}_{k+1}(x)
+\end{equation*}
+as we would like to use the induction hypothesis. A useful observation is that what we have is $\mathrm{T}_{k+2}(x),\mathrm{T}_{k+1}(x),\mathrm{T}_{k}(x)$ terms while we need the $\mathrm{T}_{k+1}(x),\mathrm{T}_{k}(x)$ and $\mathrm{T}_{k-1}(x)$ terms. Using the recurrence relation to get $\mathrm{T}_{k+2}(x)$ in terms of $\mathrm{T}_{k+1}(x)$ and $\mathrm{T}_{k}(x)$ is a clear way forward as we do not have $\mathrm{T}_{k+2}(x)$ in our goal. However, the second step is not all too obvious as we are left with
+\begin{equation*}
+\left(\mathrm{T}_{k+1}(x)\right)^2 - \mathrm{T}_{k}(x)\Big[2x\mathrm{T}_{k+1}(x) -\mathrm{T}_{k-1}(x)\Big].
+\end{equation*}
+It is a good rule of thumb to do as little algebra if possible in a question as it has the highest possibility of introducing an error due to an algebraic misstep. We could try to use the recurrence relation to get $\mathrm{T}_{k+1}(x)$ in terms of $\mathrm{T}_{k}(x)$ and $\mathrm{T}_{k-1}(x)$ but this would lead to expanding a binomial, we could instead try and use the recurrence relation to get $\mathrm{T}_{k}(x)$ in terms of $\mathrm{T}_{k+1}(x)$ and $\mathrm{T}_{k-1}(x)$ which would be less work.\par
+
+\quad In general, when doing a proof by induction take the $n=k+1$ step studiously as when written up the proof is normally quite short yet may require a decent amount of exploring and perseverance to arrive at. Take it carefully, trying not to get caught up in a well of algebra.
+
+Once we arrive at our two possible functions for $\mathrm{r}(x)$
+\begin{equation*}
+\mathrm{r}_1(x) = x + \sqrt{x^2-1} \quad \text{and} \quad \mathrm{r}_2(x) = x - \sqrt{x^2-1}
+\end{equation*}
+we see that a linear combination of these will result in a closed form for $\mathrm{T}_n(x)$, namely
+\begin{equation*}
+\mathrm{T}_n(x) = \mathrm{T_0}(x) \Big[\Big(x + \sqrt{x^2-1}\Big)^n + \Big(x - \sqrt{x^2-1}\Big)^n\Big] \quad (n \geq 1)
+\end{equation*}
+
+An interesting property can be found for these $\mathrm{T}_n(x)$'s by considering their derivatives when $\mathrm{T}_0(x) = 1$:
+\begin{align*}
+& \mathrm{T}'_n(x) = \frac{n}{\sqrt{x^2-1}}\Big[\Big(x + \sqrt{x^2-1}\Big)^{n} - \Big(x - \sqrt{x^2-1}\Big)^{n}\Big] \\
+& \mathrm{T}''_n(x) = \frac{n}{\sqrt{x^2-1}}\Big[\frac{x}{x^2-1}\Big(\Big(x + \sqrt{x^2-1}\Big)^{n} - \Big(x - \sqrt{x^2-1}\Big)^{n}\Big)\Big] \\
+&  + \frac{n}{\sqrt{x^2-1}}\Big[\Big(x + \sqrt{x^2-1}\Big)^n + \Big(x - \sqrt{x^2-1}\Big)^n\Big]
+\end{align*}
+which we can write in a more attractive way as
+\begin{align*}
+& \mathrm{T}'_n(x) = \frac{n}{\sqrt{x^2-1}}\Big[\Big(x + \sqrt{x^2-1}\Big)^{n} - \Big(x - \sqrt{x^2-1}\Big)^{n}\Big] \\
+& \mathrm{T}''_n(x) = \frac{x}{x^2-1}\mathrm{T}'_{n}(x) + \frac{n}{\sqrt{x^2-1}}\mathrm{T}_n(x)
+\end{align*}
+leaving us with
+\begin{equation*}
+(x^2-1)\mathrm{T}''_n(x) = x \mathrm{T}'_{n}(x) + n\sqrt{x^2-1}\mathrm{T}_n(x).
+\end{equation*}
+This is telling us that our functions $\mathrm{T}_n(x)$ are in fact solutions to the differential equation
+\begin{equation*}
+(x^2-1)\frac{\mathrm{d}^2y}{\mathrm{d}x^2} - x\frac{\mathrm{d}y}{\mathrm{d}x} - n\sqrt{x^2-1}y = 0
+\end{equation*}
+for $n \in \mathbb{N}$. \par
+
+\quad These polynomials are in fact \textit{Chebyshev Polynomials of the first kind}.
+
+\end{document}
