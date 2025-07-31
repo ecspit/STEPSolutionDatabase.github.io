@@ -1,0 +1,140 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}   
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+
+\title{09-S2-Q3 \\ Solution + Discussion}
+\author{David Puerta}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent In this document we will go through the solution to the 09-S2-Q3 question and provide a discussion of the question at the end. There are also hints on the first page to aid you in finding a solution. There is no single method that results in an answer to a STEP question, there are a multitude of different paths that end up at the same solution. However, some methods are more straight forward and you are encouraged to take the path of least resistance.  
+\end{abstract}
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Hints}
+\end{center}
+
+\textbf{First proof}: Use the compound angle formula for $\tan x$.
+
+\vspace{1cm}
+
+\textbf{Part (i)}:  Notice that $\frac{\pi}{8} + \frac{\pi}{3} = \frac{11\pi}{24}$.
+
+\vspace{1cm}
+
+\textbf{Part (ii)}: Multiply top and bottom by $(\sqrt{3} + 1 + \sqrt{6})/(\sqrt{3} + 1 + \sqrt{6})$.
+
+\vspace{1cm}
+
+\textbf{Part (iii)}: Let $x = \frac{11\pi}{24}$ and use the identity $\sec^2 \theta \equiv 1 + \tan^2 \theta$.
+
+
+\newpage
+
+\begin{center}
+    \textbf{Solution}
+\end{center}
+
+\vspace{0.5cm}
+
+Using the compound angel formula for $\tan x$,
+\[
+\tan\left(\frac{1}{4}\pi - \frac{1}{2}x\right) \equiv \frac{\tan\left(\frac{\pi}{4}\right) - \tan\left(\frac{x}{2}\right)}{1+\tan\left(\frac{\pi}{4}\right)\tan\left(\frac{x}{2}\right)} \equiv \frac{1 - \tan\left(\frac{x}{2}\right)}{1+\tan\left(\frac{x}{2}\right)}.
+\]
+Using the trig identity $\tan x \equiv \sin x / \cos x$,
+\[
+\frac{1 - \tan\left(\frac{x}{2}\right)}{1+\tan\left(\frac{x}{2}\right)} \equiv \frac{1- \frac{\sin\left(\frac{x}{2}\right)}{\cos\left(\frac{x}{2}\right)}}{1+ \frac{\sin\left(\frac{x}{2}\right)}{\cos\left(\frac{x}{2}\right)}} \equiv \frac{\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)}{\cos\left(\frac{x}{2}\right) + \sin\left(\frac{x}{2}\right)}
+\]
+and multiplying by $[\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)] / [\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)]$,
+\[
+\frac{\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)}{\cos\left(\frac{x}{2}\right) + \sin\left(\frac{x}{2}\right)} \cdot \frac{\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)}{\cos\left(\frac{x}{2}\right) - \sin\left(\frac{x}{2}\right)} \equiv \frac{\cos^2\left(\frac{x}{2}\right) - 2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right) + \sin^2\left(\frac{x}{2}\right)}{\cos^2\left(\frac{x}{2}\right)-\sin^2\left(\frac{x}{2}\right)}.
+\]
+Finally, using the identities $\sin 2 \theta \equiv 2\sin \theta \cos \theta$ and $\cos 2\theta \equiv \cos^2 \theta - \sin^2 \theta$,
+\[
+\frac{\cos^2\left(\frac{x}{2}\right) - 2\sin\left(\frac{x}{2}\right)\cos\left(\frac{x}{2}\right) + \sin^2\left(\frac{x}{2}\right)}{\cos^2\left(\frac{x}{2}\right)-\sin^2\left(\frac{x}{2}\right)} \equiv \frac{1-\sin x}{\cos x } \equiv \sec x - \tan x \quad (*)
+\]
+
+\vspace{0.5cm}
+
+\textbf{(i)} Letting $x = \frac{\pi}{4}$,
+\[
+\tan\left(\frac{1}{4}\pi - \frac{1}{2}\left(\frac{\pi}{4}\right)\right)= \tan\left(\frac{\pi}{8}\right) =\sec\left(\frac{\pi}{4}\right) - \tan\left(\frac{\pi}{4}\right) = \sqrt{2} - 1.
+\]
+Notting that
+\[
+\frac{\pi}{8} + \frac{\pi}{3} = \frac{11\pi}{24},
+\]
+using the compound formula for $\tan x$ and our previous answer,
+\[
+\tan\left(\frac{11\pi}{24}\right) = \tan\left(\frac{\pi}{8} + \frac{\pi}{3}\right) = \frac{\tan\left(\frac{\pi}{8}\right) + \tan\left(\frac{\pi}{3}\right)}{1 - \tan\left(\frac{\pi}{8}\right)\tan\left(\frac{\pi}{3}\right)} = \frac{\sqrt{3} + \sqrt{2} -1}{\sqrt{3} - \sqrt{6} + 1}.
+\]
+
+\vspace{0.5cm}
+
+\textbf{(ii)} Multiplying top and bottom by $[\sqrt{3} + 1 + \sqrt{6}]/[\sqrt{3} + 1 + \sqrt{6}]$,
+\begin{align*}
+& \frac{\sqrt{3} + \sqrt{2} -1}{\sqrt{3} - \sqrt{6} + 1} \cdot \frac{\sqrt{3}+1+\sqrt{6}}{\sqrt{3} +1+\sqrt{6}} \\[2pt] 
+& = \frac{(\sqrt{3} + \sqrt{2})(\sqrt{3} + 1) + \sqrt{6}(\sqrt{3} + \sqrt{2}) - \sqrt{3} -1 -\sqrt{6}}{(\sqrt{3} + 1)^2 - 6} \\[2pt]
+& = \frac{2 + \sqrt{2} + \sqrt{12} + \sqrt{18}}{2\sqrt{3}-2}
+\end{align*}
+and noticing that 
+\[
+\frac{1}{2(\sqrt{3}-1)} \cdot \frac{\sqrt{3} + 1}{\sqrt{3} + 1} = \frac{\sqrt{3} + 1}{4}
+\]
+leaves us with 
+\begin{align*}
+& \frac{2 + \sqrt{2} + \sqrt{12} + \sqrt{18}}{2\sqrt{3}-2} = \frac{\sqrt{3} + 1}{4}(2 + \sqrt{2} + \sqrt{12} + \sqrt{18}) \\ 
+& = 2 + \sqrt{2} + \sqrt{3} + \sqrt{6}.
+\end{align*}
+
+\vspace{0.5cm}
+
+\textbf{(iii)} Letting $x = \frac{11\pi}{24}$,
+\[
+\tan\left(\frac{1}{4}\pi - \frac{1}{2}\left(\frac{11\pi}{24}\right)\right)= \tan\left(\frac{\pi}{48}\right) =\sec\left(\frac{11\pi}{24}\right) - \tan\left(\frac{11\pi}{24}\right) 
+\]
+and using the identity $\sec^2 \theta \equiv 1+ \tan^2 \theta$ gives us,
+\[
+\sec\left(\frac{11\pi}{24}\right) = \sqrt{1+\tan^2\left(\frac{11\pi}{24}\right)}
+\]
+as $\sec(11\pi/24)>0$ due to $\cos x > 0$ when $0\leq x < \pi/2$. Squaring our answer to part (ii),
+\[
+\tan^2\left(\frac{11\pi}{24}\right) = (2 + \sqrt{2} + \sqrt{3} + \sqrt{6})^2 = 15 + 10\sqrt{2} + 8\sqrt{3} + 6\sqrt{6}
+\]
+and thus 
+\[
+\tan\left(\frac{\pi}{48}\right) = \sqrt{16 + 10\sqrt{2} + 8\sqrt{3} + 6\sqrt{6}} -2 - \sqrt{2} - \sqrt{3} - \sqrt{6}.
+\]
+\newpage
+
+\begin{center}
+    \textbf{Discussion}
+\end{center}
+
+\vspace{0.5cm}
+
+With more surds than snails on a wet English day, the greatest possibility for error is that you will lose, incorrectly multiply or mistakenly add two or more surds. This question is an exercise in precise algebraic manipulation and simplification, not just with surds but with trigonometric functions as well.\par
+
+\quad The first proof is the crux of the whole question, and the tool that is repeatedly used to find these elaborate expressions for specific trigonometric values. It can be quite confusing to show yet with the first step being the compound angle formula, some creativity and resilience will result in the final answer.\par 
+
+\quad Part (i) is quite straight forward although the final part can be misleading as the easiest way to get the desired expression is not through use of $(*)$, instead with another use of the compound angle formula.\par 
+
+\quad Part (ii) may be uncomfortable for some as the rationalisation of a fraction with three terms in the denominator can seem off putting. Treating the denominator as 
+\[
+(\sqrt{3} + 1)- \sqrt{6}
+\]
+can help in spotting the appropriate factor to use.\par
+
+\quad Finally, part (iii) uses $(*)$ again with the added difficulty of having to find the value of $\sec(11\pi/24)$. The justification of the sign of  $\sec(11\pi/24)$ is important as the final answer is positive.\par 
+\quad Overall, this is a question accessible to those who are comfortable with trig, surds and most importantly algebraic manipulation and simplification.
+
+
+\end{document}
