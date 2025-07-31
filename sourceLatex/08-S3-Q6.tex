@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}   
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+
+\title{08-S3-Q6 \\ Solution + Discussion}
+\author{David Puerta}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent In this document we will go through the solution to the 08-S3-Q6 question and provide a discussion of the question at the end. There are also hints on the first page to aid you in finding a solution. There is no single method that results in an answer to a STEP question, there are a multitude of different paths that end up at the same solution. However, some methods are more straight forward and you are encouraged to take the path of least resistance.  
+\end{abstract}
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Hints}
+\end{center}
+
+\textbf{Part (i)}: Differentiate $p$ implicitly just as you would differentiate $y$.
+
+\vspace{1cm}
+
+\textbf{Part (ii)}:  Differentiate with respect to $x$.
+
+
+\newpage
+
+\begin{center}
+    \textbf{Solution}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{(i)} Differentiating with respect to $x$,
+\[
+\frac{\mathrm{d}}{\mathrm{d}x} \left[y = p^2 + 2xp \right] 
+\]
+which leaves us with 
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x} (p^2 + 2xp).
+\]
+As $p$ is a function of $x$ we can implicitly differentiate the right hand side of the above equation
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = 2p  \frac{\mathrm{d}p}{\mathrm{d}x} + 2x \frac{\mathrm{d}p}{\mathrm{d}x} + 2p 
+\]
+and noting that $p = \frac{\mathrm{d}y}{\mathrm{d}x}$ we can rearrange to arrive at 
+\[
+\frac{\mathrm{d}x}{\mathrm{d}p} = -2 - \frac{2x}{p}.
+\]
+Notice that we can rearrange the equation to 
+\[
+\frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2x}{p} = -2
+\]
+which is a first order differential equation which can be solved with the integrating factor
+\begin{equation*}
+I = \exp \left( \int \frac{2}{p} \,\mathrm{d}p \right) = \exp (2 \ln (p)) = p^2.
+\end{equation*}
+Multiplying the differential equation by $I$,
+\[
+\frac{\mathrm{d}}{\mathrm{d}p}[xp^2] = -2p^2
+\]
+and after integrating both sides we arrive at our desired
+\[
+x = -\frac{2}{3}p+Ap^{-2}
+\]
+where $A$ is an arbitrary constant.\par
+
+\quad Using our initial conditions ($p=-3$ when $x=2$) we find that
+\[
+2 = -\frac{2}{3}(-3)+\frac{A}{9} \Rightarrow A = 0
+\]
+and thus
+\[
+x = -\frac{2}{3}p.
+\]
+Replacing $p$ with $\frac{\mathrm{d}y}{\mathrm{d}x}$,
+\begin{equation*}
+x = -\frac{2}{3}\frac{\mathrm{d}y}{\mathrm{d}x}
+\end{equation*}
+which can be solved to get
+\begin{equation*}
+y(x) = -\frac{3}{4}x^2 + C
+\end{equation*}
+where $C$ is an arbitrary constant.\par
+\quad Using the initial conditions in the original equation $y=p^2+2xp$ we get that $y=-3$ when $x=2$. Hence we have
+\[
+-3 = -\frac{3}{4}(4) + C \Rightarrow C = 0
+\]
+and thus
+\[
+y(x) = -\frac{3}{4}x^2.
+\]
+
+\vspace{0.5cm}
+
+\textbf{(ii)} Using the same idea as part (i), differentiating with respect to $x$,
+\begin{align*}
+\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}}{\mathrm{d}x}(2xp+p\ln(p)),
+\end{align*}
+using the chain and product rule,
+\[
+\frac{\mathrm{d}y}{\mathrm{d}x} = 2p + 2x\frac{\mathrm{d}p}{\mathrm{d}x} + \frac{\mathrm{d}p}{\mathrm{d}x}\ln(p) + p \frac{1}{p}\frac{\mathrm{d}p}{\mathrm{d}x}
+\]
+and noting that $p = \frac{\mathrm{d}y}{\mathrm{d}x}$ we can rearrange the equation to 
+\[
+\frac{\mathrm{d}x}{\mathrm{d}p} = -\frac{1}{p} -\frac{2x}{p} - \frac{\ln(p)}{p}
+\]
+which can be written as
+\[
+\frac{\mathrm{d}x}{\mathrm{d}p} + \frac{2x}{p} = -\frac{1}{p} - \frac{\ln(p)}{p}.
+\]
+This is again a first order differential equation for $x$ in terms of $p$ that can be solved with the same integrating factor ($I = p^2$) as before. Multiplying by $I$,
+\[
+\frac{\mathrm{d}}{\mathrm{d}p}[xp^2] = -p-p\ln(p).
+\]
+Integrating both sides,
+\begin{align*}
+& xp^2 = \int -p-p\ln(p) \,\mathrm{d}p = - \int p \,\mathrm{d}p - \int p\ln(p) \,\mathrm{d}p \\
+& \Rightarrow xp^2 = -\frac{p^2}{2} - \left[\frac{p^2}{2}\ln(p) - \int \frac{1}{p} \cdot \frac{p^2}{2} \,\mathrm{d}p\right] = -\frac{p^2}{2}\left(\frac{1}{2}+\ln(p)\right) + B
+\end{align*}
+where $B$ is an arbitrary constant. Hence we arrive at
+\[
+x = -\frac{1}{2}\left[\frac{1}{2} + \ln(p) \right] + Bp^{-2}.
+\]
+Using our initial conditions ($p=1$ when $x= -\frac{1}{4}$) we see that
+\[
+-\frac{1}{4} = -\frac{1}{4} + B \Rightarrow B=0
+\]
+thus
+\[
+x = -\frac{1}{2}\ln(p) - \frac{1}{4}.
+\]
+
+Rearranging for $p$ in terms of $x$ and using $p = \frac{\mathrm{d}y}{\mathrm{d}x}$,
+\[
+p = \frac{\mathrm{d}y}{\mathrm{d}x} = e^{-2x-\frac{1}{2}}
+\]
+and integrating both sides,
+\[
+y = -\frac{1}{2}e^{-2x-\frac{1}{2}} + C.
+\]
+From $y=2xp+p\ln(p)$ and our initial conditions ($p=1$ when $x=-\frac{1}{4}$) we have that $y=-\frac{1}{2}$ when $x=-\frac{1}{4}$. Solving for $C$,
+\[
+-\frac{1}{2} = -\frac{1}{2}e^{0} + C \Rightarrow C=0
+\]
+and hence we have
+\[
+y = -\frac{1}{2}e^{-2x-\frac{1}{2}}.
+\]
+
+\newpage
+
+\begin{center}
+    \textbf{Discussion}
+\end{center}
+
+\vspace{0.5cm}
+
+As far as STEP question goes this one is pretty straight forward. If you ignore the initial discomfort of having $p=\mathrm{d}y / \mathrm{d}x$ and the having $\mathrm{d}x / \mathrm{d}p$ (differentiating $x$ as a function of $\mathrm{d}y / \mathrm{d}x$!) then the actual computation is clear-cut. To understand why viewing the differential equations
+\begin{equation*}
+y = \left(\frac{\mathrm{d}y}{\mathrm{d}x} \right)^2 + 2x \frac{\mathrm{d}y}{\mathrm{d}x} \quad \text{and} \quad  y=2x \frac{\mathrm{d}y}{\mathrm{d}x} + \frac{\mathrm{d}y}{\mathrm{d}x} \ln \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)
+\end{equation*}
+using the substitution $p=\frac{\mathrm{d}y}{\mathrm{d}x}$ works in the first place is to see when it made the question easier.\par
+
+\quad Starting with
+\begin{equation*}
+y = \left(\frac{\mathrm{d}y}{\mathrm{d}x} \right)^2 + 2x \frac{\mathrm{d}y}{\mathrm{d}x}
+\end{equation*}
+we see that in our solution we arrive at
+\begin{equation*}
+x = -\frac{2}{3}p+Ap^{-2}
+\end{equation*}
+with $A$ an arbitrary constant. If we remember what we are after ($y$ as a function of $x$), we see that we would like to find a solution for $p$ in terms of $x$ and integrate the result to find $y$. Yet this is only (reasonably) possible if we allow for initial conditions such that $A=0$ - which is what we had in the question. If instead we require that $A \neq 0$ we arrive at a standstill as there is no reasonable way to solve for $p$.\footnote{It should be noted that the equation can be written as a cubic in $p$ yet this leads to some ugly integration, try it yourself!} 
+Similarly with
+\begin{equation*}
+y=2x \frac{\mathrm{d}y}{\mathrm{d}x} + \frac{\mathrm{d}y}{\mathrm{d}x} \ln \left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)
+\end{equation*}
+we see that in our solution we arrive at
+\begin{equation*}
+x = -\frac{1}{4} - \frac{1}{2}\ln(p) + Bp^{-2}
+\end{equation*}
+with $B$ an arbitrary constant. We see that if $B\neq 0$ we are in the same situation as part (i) - arguably worse as we have $\ln(p)$.\par
+
+\quad Overall, this question is accessible to all those who can follow instructions, comfortable with integrating factors and smile as everything falls into place.
+
+
+\end{document}
