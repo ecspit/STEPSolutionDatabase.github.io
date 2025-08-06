@@ -37,7 +37,7 @@
   </table>
 
   <script>
-    //  STEP Qs 
+    //  STEP Ans
     const stepData = [
       {
         year: "2008",
@@ -81,12 +81,19 @@
         topic: "Hooke's law",
         pdfUrl: "solutions/93-S3-Q12.pdf"
       },
+      {
+        year: "2017",
+        paper: "STEP III",
+        question: "Q5",
+        topic: "Polar equations",
+        pdfUrl: "solutions/17-S3-Q5.pdf"
+      },
     ];
 
     const tableBody = document.getElementById("table-body");
     const searchInput = document.getElementById("search-input");
 
-    //  Render rows
+    // Render rows
     function renderTable(data) {
       tableBody.innerHTML = "";
       data.forEach(entry => {
@@ -102,7 +109,7 @@
       });
     }
 
-    //  Filter rows on search input
+    // Filter rows on search input
     function handleSearch() {
       const query = searchInput.value.toLowerCase();
       const filtered = stepData.filter(entry =>
