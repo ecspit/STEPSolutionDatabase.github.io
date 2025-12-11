@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}   
+\usepackage{amsthm}
+\usepackage{amsfonts} 
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.3}
+
+% Macros 
+\newcommand\bfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+\title{94-S1-Q2 \\ Solution + Discussion}
+\author{David Puerta}
+\date{}
+
+\definecolor{BLUE}{RGB}{101,149,179}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent In this document we will go through the solution to the 94-S1-Q2 question and provide a discussion of the question at the end. There are also hints on the first page to aid you in finding a solution. There is no single method that results in an answer to a STEP question, there are a multitude of different paths that end up at the same solution. However, some methods are more straight forward and you are encouraged to take the path of least resistance.  
+\end{abstract}
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Hints}
+\end{center}
+
+\textbf{(i)}: Power rule.
+
+\vspace{1cm}
+
+\textbf{(ii)}: Do you know the rule? If not, remember that $A=e^{\ln(A)}$.
+
+\vspace{1cm}
+
+\textbf{(iii)}: : How could you use the fact that $A=e^{\ln(A)}$?
+
+\vspace{1cm}
+
+\textbf{(iv)}: Start with $A=e^{\ln(A)}$ and use part (iii).
+
+\vspace{1cm}
+
+\textbf{(v)}: Start with $A=e^{\ln(A)}$.
+
+
+
+
+
+
+
+\newpage
+
+\begin{center}
+    \textbf{Solution}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{(i)} Using the power rule we have 
+\[
+\der{}{x}(x^a) = ax^{a-1} 
+\]
+for all $a \in \mathbb{R}$.
+
+\textbf{(ii)} Using the differentiation rule for a general base $a>0$ gives 
+\[
+\der{}{x}(a^x) = \ln(a)a^x.
+\]
+
+\textbf{(iii)} Firstly observe that we can write 
+\begin{equation}
+x^x = e^{\ln(x^x)} = e^{x\ln(x)}
+\end{equation}
+We then can use the chain rule to find 
+\[
+\der{}{x}(e^{x\ln(x)}) = \left(\ln(x) + x \cdot \frac{1}{x}\right)e^{x\ln(x)} = \left(\ln(x) + 1\right)e^{x\ln(x)}
+\]
+and putting this together with (1) leaves us with 
+\[
+\der{}{x}(x^x) = (\ln(x)+1)x^x.
+\]
+
+\textbf{(iv)} As in (iii), we can write 
+\begin{equation}
+    x^{(x^x)} = e^{\ln\left(x^{(x^x)}\right)} = e^{x^x\ln(x)} 
+\end{equation}
+We can then use the chain rule and part (iii) to find 
+\[
+\der{}{x}(e^{x^x\ln(x)} ) = \Big((\ln(x)+1)x^x \ln(x) + x^x\cdot \frac{1}{x}\Big)e^{x^x\ln(x)} 
+\]
+\[
+= \Big((\ln(x)+1)x^x \ln(x) + x^{x-1}\Big)e^{x^x\ln(x)}
+\]
+Hence, by (2) we have 
+\[
+\der{}{x}\Big(x^{(x^x)}\Big) = \Big((\ln(x)+1)x^x \ln(x) + x^{x-1}\Big)x^{(x^x)}.
+\]
+
+\textbf{(v)} As in (iii) and (iv),
+\begin{equation}
+    (x^x)^x = e^{\ln\Big((x^x)^x\Big)} = e^{x^2\ln(x)}
+\end{equation}
+Then using the chain rule,
+\[
+\der{}{x}\Big(e^{x^2\ln(x)}\Big) = \Big(2x\ln(x)+x^2\cdot \frac{1}{x}\Big)e^{x^2\ln(x)} 
+\]
+\[
+= x\Big(2\ln(x)+1\Big)e^{x^2\ln(x)}.
+\]
+Thus, using (3) we have 
+\[
+\der{}{x}\Big((x^x)^x\Big) = x\Big(2\ln(x)+1\Big)(x^x)^x.
+\]
+\newpage
+
+\begin{center}
+    \textbf{Discussion}
+\end{center}
+
+\vspace{0.5cm}
+
+The first two parts are quite straight forward as for most they will just be recalling known laws, yet the way of proving the law for part (ii) is the centre piece of the whole question. Proving it requires the same trick to do parts (iii),(iv) and (v), that is 
+\begin{equation*}
+\text{If } a>0, \text{then } a=e^{\ln(a)} \text{ as the exponential and logarithm will cancel.}     
+\end{equation*}
+This is the whole point of the question, once you notice this then the whole question becomes a matter of repetition. 
+
+The process is the same for each part:
+\begin{enumerate}
+    \item Write the thing you are trying to differentiate, say $f(x)$, as $f(x) =e^{\ln(f(x))}$
+    \item Then use the chain rule to find $\der{}{x}(e^{\ln(f(x))})$.
+    \item Finally, substitute back in $f(x)$
+\end{enumerate}
+ You might notice that for $\der{}{x}(a^x)=\ln(a)a^x$ we require $a>0$ as $\ln(a)$ is undefined for $a\leq0$. But what if $a \leq0$? What can we say about $a^x$?
+
+ If $a=0$, then we have the function $0^x$ which is as follows 
+ \[
+ 0^x = \begin{cases} 0 \quad \text{for } x \ne 0 \\ \text{undefined at }x=0\end{cases}
+ \]
+ which may seem odd as we know that $x^0=1$ for all $x$ and that $0^x=0$ for all $x \ne0 $ but something strange happens at $0^0$ - is it $1$ or is it $0$? This is one of the \textit{indeterminate forms}. As a result, we cannot differentiate $a^x$ when $a=0$.
+
+ If $a<0$, then we have the function $(-b)^x$ where $a=-b$ and $b>0$. To see why this is a problem consider when $a=-1$. We see that 
+ \[
+ (-1)^x = \begin{cases}-1 \quad \text{when $x$ is an odd integer} \\[2pt] 1 \quad \text{when $x$ is an even integer} \\[2pt] \text{undefined elsewhere}
+ \end{cases}
+ \]
+ which may seem strange at first, yet lets look at when $x=1/2$,
+ \[
+ (-1)^{1/2} = \sqrt{-1}
+ \]
+ which is clearly not a real number, and thus we cannot plot this point on the Cartesian plane. So our function $(-b)^x$ is only defined at integer values of $x$, and we cannot differentiate it. 
+
+ Overall, once you spot the trick of writing $a =e^{\ln(a)}$ the rest of the question is quite straightforward. 
+ \end{document} 
