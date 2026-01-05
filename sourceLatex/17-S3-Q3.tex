@@ -1,0 +1,221 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}   
+\usepackage{amsthm}
+\usepackage{amsfonts} 
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usepackage{pgfplots}
+\usepackage{parskip}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.3}
+
+% Macros 
+\newcommand\bfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+\title{17-S3-Q3 \\ Solution + Discussion}
+\author{David Puerta}
+\date{}
+
+\definecolor{BLUE}{RGB}{101,149,179}
+
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent In this document we will go through the solution to the 17-S3-Q3 question and provide a discussion of the question at the end. There are also hints on the first page to aid you in finding a solution. There is no single method that results in an answer to a STEP question, there are a multitude of different paths that end up at the same solution. However, some methods are more straight forward and you are encouraged to take the path of least resistance.  
+\end{abstract}
+
+\vspace{1cm}
+
+\begin{center}
+    \textbf{Hints}
+\end{center}
+
+\textbf{First part}: Use Vieta's formula for the coefficient of $x^2$ and for $y^2$.
+
+\vspace{1cm}
+
+\textbf{(i)}: The cubic $y^3-3y^2-40y+84$ has $y-2$ as a factor.
+
+\vspace{1cm}
+
+\textbf{(ii)}: What does $(\alpha+\beta)(\gamma+\delta)$ expand to and how does this relate to part (i)? Can you form a quadratic in terms of $\alpha \beta$?
+
+\vspace{1cm}
+
+\textbf{(iii)}: Use Vieta's formula for the coefficient of $x^3$ and for the coefficient of $x$ and can you form two simultaneous equations? 
+
+
+
+\newpage
+
+\begin{center}
+    \textbf{Solution}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{(Finding $A$)} We can find $A$ using Vieta's formula for the coefficient of $x^2$ for the quartic 
+\[
+x^4+px^3+qx^2+rx+s=0
+\]
+which gives us 
+\[
+\alpha\beta + \alpha \gamma + \alpha \delta + \beta \gamma + \beta \delta + \gamma \delta = q
+\]
+and we can then apply Vieta's formula for the coefficient of $y^2$ in the cubic 
+\[
+y^3 +Ay^2+(pr-4s)y + (4qs-p^2s-r^2)=0
+\]
+which gives us 
+\[
+(\alpha\beta+\gamma\delta) + (\alpha \gamma +\beta \delta) + (\alpha \delta + \beta \gamma) = -A
+\]
+clearly giving us that $A=-q$.
+
+\textbf{(i)} We will now consider the quartic
+\[
+x^4 + 3x^2-6x+10=0
+\]
+For ease of notation, let $\alpha \beta +\gamma\delta = L$, $\alpha \gamma +\beta \delta =M$ and $\alpha \delta +\beta \gamma =N$. 
+
+We are given that $L$ is the largest root, so $L>M$ and $L>N$ with $L,M,N$ begin the roots to the cubic equation 
+\[
+y^3-3y^2-40y+84=0
+\]
+Using the Rational Root Theorem, or by inspection, we see that $y=2$ is a solution to the cubic above and we can factorise as follows
+\[
+y^3-3y^2-40y+84 = (y-2)(y^2-y-42)=0
+\]
+which gives us solutions $y=-6,2,7$. Hence, $L=7$.
+
+\textbf{(ii)} Observe that 
+\[
+(\alpha+\beta)(\gamma+\delta) =  \alpha \gamma + \alpha \delta + \beta \gamma + \beta \delta  = M+N
+\]
+and using Vieta's formula for the coefficient of $y^2$ in the cubic
+\[
+y^3-3y^2-40y+84=0
+\]
+with our value for $L$ gives 
+\[
+L+M+N = 3 \Rightarrow M+N = -4
+\]
+
+We know that 
+\[
+L = \alpha \beta +\gamma\delta = 7
+\]
+and using Vieta's formula for the constant term in the quartic equation
+\[
+x^4 + 3x^2-6x+10=0
+\]
+gives us that
+\[
+\alpha\beta\gamma\delta = 10 \Rightarrow \gamma\delta = \frac{10}{\alpha\beta}
+\]
+Now letting $\alpha\beta = B$, we have that 
+\[
+B + \frac{10}{B} = 7 \Rightarrow B^2-7B+10=0
+\]
+which has solutions $B=2,5$. Since $\alpha \beta > \gamma\delta$ we must have $\alpha \beta = 5$
+
+\textbf{(iii)} We know that $\alpha \beta = 5$ and that $\gamma\delta = 2$, hence we have $\beta = \frac{5}{\alpha}$ and $\delta = \frac{2}{\gamma}$. 
+
+Using Vieta's formula for the coefficient of $x^3$ in the quartic equation
+\[
+x^4 + 3x^2-6x+10=0
+\]
+gives us that 
+\[
+\alpha + \beta + \gamma + \delta =0
+\]
+and Vieta's formula for the coefficient of $x$ gives us 
+\[
+\alpha\beta \gamma + \alpha\beta\delta + \alpha \gamma \delta +\beta\gamma\delta = 6
+\]
+We can rewrite the above as 
+\[
+\alpha\beta (\gamma + \delta) + \gamma\delta(\alpha +\beta) = 6
+\]
+which we know from previous is 
+\[
+5(\gamma + \delta) + 2(\alpha +\beta) = 6
+\]
+Substituting $\beta = \frac{5}{\alpha}$ and $\delta = \frac{2}{\gamma}$ into both expressions gives 
+\begin{align*}
+\begin{cases}
+    \left(\alpha + \frac{5}{\alpha}\right) + \left(\gamma + \frac{2}{\gamma}\right) = 0 \\
+    2\left(\alpha + \frac{5}{\alpha}\right) + 5\left(\gamma + \frac{2}{\gamma}\right) = 6
+\end{cases}
+\end{align*}
+and setting $\alpha + \frac{5}{\alpha} = A$ and $\gamma + \frac{2}{\gamma} = C$ gives us a set of simultaneous equations 
+\begin{align*}
+\begin{cases}
+    A + C = 0 \\
+    2A + 5C= 6
+\end{cases}
+\end{align*}
+which give $A=-2$ and $C=2$. This gives us 
+\begin{align*}
+\begin{cases}
+    \alpha + \frac{5}{\alpha} = -2  \Rightarrow \alpha^2+2\alpha+5 = 0\\
+    \gamma + \frac{2}{\gamma} = 2 \Rightarrow \gamma^2-2\gamma+2=0
+\end{cases}
+\end{align*}
+with solutions $\alpha = -1\pm 2i$ and $\gamma = 1 \pm i$. We can see that 
+\[
+\beta  = \frac{5}{\alpha} \Rightarrow \beta = -1\mp 2i \quad \text{and} \quad \delta  = \frac{2}{\gamma} \Rightarrow \delta = 1\mp i
+\]
+by multiplying by the complex conjugate. This means that our quartic has solutions $-1+2i,-1-2i,1+i,1-i$.
+\newpage
+
+\begin{center}
+    \textbf{Discussion}
+\end{center}
+
+\vspace{0.5cm}
+
+First two parts are standard for a roots of polynomials question, the only trouble you might run into is forgetting Vieta's formulas for the coefficients of a polynomial or failing to spot the rational root\footnote{If you have forgotten or not seen the Rational Root Theorem, you can find out more \underline{\href{https://en.wikipedia.org/wiki/Rational_root_theorem}{here}} or you can check out my discussion for 05-S1-Q4 where I  give a brief outline of it.} for the cubic $y^3-3y^2-40y+84=0$.
+
+For the next two parts, once you finally have the quadratic equations you need it's easy, the hard part is setting them up clearly. I would recommend poking around and seeing which Vieta's formulas you end up needing on a scrap piece of paper and then writing your solution - this does add a bit of time but it makes it much easier to read through, and especially to mark!
+
+Vieta's formulas are the backbone to this question and applying the right one to the correct polynomial is essential, yet in the beginning it may help to have all the formulas written out in front of you and from there choose which you would like to use. 
+
+For example, if I am trying to do part (ii) and I am having difficulty identifying which formulas I need from the cubic 
+\[
+y^3-3y^2-40y+84=0
+\]
+with roots $L,M,N$, then I can write them all on the side 
+\begin{align*}
+& L+M+N = 3\\
+& LM + LN + MN = -40 \\
+& LMN = -84
+\end{align*}
+and only then choose which I need.
+
+It is also worth remembering for STEP questions that Vieta's formulas, which we are  used to applying to quadratics, cubics and maybe sometimes quartics in A-Level, apply to all polynomials. If we had a polynomial 
+\[
+a_nx^n+a_{n-1}x^{n-1} + \cdots +a_1x+a_0=0
+\]
+then we can always divide by the leading coefficient to get 
+\[
+x^n+\frac{a_{n-1}}{a_n}x^{n-1} + \cdots +\frac{a_1}{a_n}x+\frac{a_0}{a_n}=0
+\]
+We can then say that this polynomial has $n$-roots $r_1,r_2,\cdots,r_n$ and apply the sum of singulars with the alternating sign 
+\[
+r_1+\cdots+r_n = -\frac{a_{n-1}}{a_n}
+\]
+pairs with the alternating sign 
+\[
+r_1r_2+r_1r_3+\cdots + r_{n-1}r_n = \frac{a_{n-2}}{a_n}
+\]
+and so on. 
+
+Overall, a good answer to this question requires confidence in Vieta's formulas, good algebraic manipulation and clear workings; this question is a must try for anyone who enjoys polynomial questions. 
+ \end{document}
