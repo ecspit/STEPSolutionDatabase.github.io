@@ -2,7 +2,7 @@
 
 **STEP Solution Database** is a curated collection of written solutions and discussions for questions from the Cambridge STEP (Sixth Term Examination Paper) mathematics exams.
 
-The STEP exam is used by the University of Cambridge and other UK universities as part of their admissions process for mathematics and related courses. This repository aims to help students prepare by offering detailed solutions, hints, and topic discussions. :contentReference[oaicite:0]{index=0}
+The STEP exam is used by the University of Cambridge and other UK universities as part of their admissions process for mathematics and related courses. This repository aims to help students prepare by offering detailed solutions, hints, and topic discussions. 
 
 ---
 
@@ -15,9 +15,9 @@ This site provides:
 - **Discussions** about approaches and methods  
 - **Topic categorisation** to aid targeted revision
 
-Each entry includes a complete solution and commentary to help deepen understanding. :contentReference[oaicite:1]{index=1}
+Each entry includes a complete solution and commentary to help deepen understanding. 
 
-> *This project is not affiliated with the University of Cambridge, OCR, or the official STEP database.* :contentReference[oaicite:2]{index=2}
+> *This project is not affiliated with the University of Cambridge, OCR, or the official STEP database.* 
 
 ---
 
@@ -43,8 +43,6 @@ Basic structure on the website:
 | Topic(s) | Maths topic(s) involved |
 | Answer | Link to solution PDF |
 
-The site dynamically lists all entries in a searchable table. :contentReference[oaicite:3]{index=3}
+The site dynamically lists all entries in a searchable table.
 
 ---
-
-ChatGPT can make mistakes. Check important info. See Cookie Preferences.
