@@ -62,9 +62,3 @@ To contribute:
 3. Submit a **pull request** with your changes.
 
 ---
-
-## ❤️ Support
-
-If you find this useful, **star ⭐ the repo** and share it with other STEP students!
-
----
