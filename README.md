@@ -2,26 +2,26 @@
 
 **STEP Solution Database** is a curated collection of written solutions and discussions for questions from the Cambridge STEP (Sixth Term Examination Paper) mathematics exams.
 
-The STEP exam is used by the University of Cambridge and other UK universities as part of their admissions process for mathematics and related courses. This repository aims to help students prepare by offering detailed solutions, hints, and topic discussions. 
+The STEP exam is used by the University of Cambridge and other UK universities as part of their admissions process for mathematics and related courses. This repository aims to help students prepare by offering detailed solutions, hints, and topic discussions.
 
 ---
 
-## What This Is
+## 🧠 What This Is
 
 This site provides:
 
-- **Written solutions** to past STEP exam questions  
-- **Hints** to guide your thinking  
-- **Discussions** about approaches and methods  
-- **Topic categorisation** to aid targeted revision
+- 📘 **Written solutions** to past STEP exam questions  
+- 💡 **Hints** to guide your thinking  
+- 🗣 **Discussions** about approaches and methods  
+- 🧮 **Topic categorisation** to aid targeted revision
 
-Each entry includes a complete solution and commentary to help deepen understanding. 
+Each entry includes a complete solution and commentary to help deepen understanding.
 
-> *This project is not affiliated with the University of Cambridge, OCR, or the official STEP database.* 
+> ⚠️ *This project is not affiliated with the University of Cambridge, OCR, or the official STEP database.* 
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 To use this repository:
 
@@ -31,7 +31,7 @@ To use this repository:
 
 ---
 
-## How It’s Structured
+## 📂 How It’s Structured
 
 Basic structure on the website:
 
@@ -43,6 +43,28 @@ Basic structure on the website:
 | Topic(s) | Maths topic(s) involved |
 | Answer | Link to solution PDF |
 
-The site dynamically lists all entries in a searchable table.
+The site dynamically lists all entries in a searchable table. 
+
+---
+
+## 📥 Contributing
+
+Contributions are welcome! You can help by:
+
+- Adding new solutions
+- Improving existing write-ups
+- Fixing typos or formatting issues
+
+To contribute:
+
+1. **Fork** the repository.
+2. Create a new **branch**.
+3. Submit a **pull request** with your changes.
+
+---
+
+## ❤️ Support
+
+If you find this useful, **star ⭐ the repo** and share it with other STEP students!
 
 ---
